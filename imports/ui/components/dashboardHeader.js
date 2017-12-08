@@ -11,21 +11,13 @@ export default class dashboardHeader extends Component {
   render() {
     return (
       <header className="" style={Styles.header}>
-      <div>
-        <h3 style={Styles.title}>Bienvenue <span style={Styles.titleEmail}>{this.props.email}</span></h3>
-        <button className="btn btn-primary" onClick={this.onLogout}>Log Out</button>
+      <div style={Styles.logo}>
+        <h3 style={{margin:0}}>Dashboard</h3>
       </div>
-        <ul style={Styles.nav}>
-          <li>
-            <a className="white" href="#">Home</a>
-          </li>
-          <li>
-            <a className="white" href="#">About</a>
-          </li>
-          <li>
-            <a className="white" href="#">Contact</a>
-          </li>
-        </ul>
+      <div style={{textAlign:'right', padding: '15px',}}>
+        <h3 style={Styles.title}><span style={Styles.titleEmail}>{this.props.email}</span></h3>
+        <button className="btn btn-primary btn-sm" style={{marginTop: '5px'}} onClick={this.onLogout}>Log Out</button>
+      </div>
     </header>
     )
   }
@@ -33,21 +25,24 @@ export default class dashboardHeader extends Component {
 
 const Styles = {
   header: {
-    backgroundColor:'grey',
+    backgroundColor:'#41396A',
     width:'100%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: '15px',
-  },
-  nav: {
-    display: 'flex',
-    alignItems: 'center',
   },
   title: {
     margin: '0',
+    color:'white',
   },
   titleEmail: {
     fontSize: '15px'
+  },
+  logo: {
+    width: '150px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    background: '#FAE82F',
   }
 }

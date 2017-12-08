@@ -11,7 +11,7 @@ import NoMatch from "../imports/ui/Notfound";
 
 const routes = (
     <BrowserRouter>
-        <div>
+        <div style={{height:'100%'}}>
             <Switch>
                 <Route exact path="/" component={Login}/>
                 <Route path="/signup" component={Signup}/>

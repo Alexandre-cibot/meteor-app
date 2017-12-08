@@ -27,3 +27,35 @@ ul li {
 .white {
   color: white;
 }
+
+.sidebar {
+  min-width: 150px;
+  background-color: #41396A;
+}
+.sidebar li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size:12px;
+  justify-content: space-evenly;
+  flex:1;
+  /* border: 1px solid white; */
+  cursor: pointer;
+  margin:0;
+}
+
+.sidebar li:hover:not(.selected) {
+  background-color: rgba(36, 33, 54, 0.3);
+}
+.sidebar ul li img {
+  width:25px;
+ }
+.selected {
+   background-color: #242136;
+ }
+.display {
+  width: 100%;
+  padding: 20px; 
+}

@@ -8,12 +8,10 @@ Meteor.startup(() => {
     console.log("Option", options);
     console.log('-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-')
     console.log("users", user);
-    Meteor.users.update(user._id, {
-      $set: {
-        pseudo: options.fullname
-      }
-    });
-    // user.fullname = options.fullname;
+    user['fullname'] = options.profile.fullname;
+    user['role'] = "student";
     return user;
   });  
 });
+
+

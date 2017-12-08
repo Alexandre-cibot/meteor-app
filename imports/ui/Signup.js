@@ -19,7 +19,11 @@ class Signup extends Component {
          let email = this.refs.email.value.trim();
          let password = this.refs.password.value.trim();
 				console.log(fullname, email, password);
-         Accounts.createUser({ fullname, email, password }, (err) => {
+         Accounts.createUser({ 
+					email,
+					password,
+					profile: {fullname}
+					}, (err) => {
             if (err) {
 							console.log("Error", err)
               this.setState({

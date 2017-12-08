@@ -1,0 +1,8 @@
+db.users.update(
+  { _id: "" },
+  { $set:
+     {
+       "profile.role": "teacher",
+     }
+  }
+)

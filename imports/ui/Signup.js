@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import Modal from './components/modal';
 import { Accounts } from 'meteor/accounts-base';
 
 class Signup extends Component {
@@ -8,7 +8,8 @@ class Signup extends Component {
         super(props);
 
         this.state = {
-            error: '',
+						error: '',
+						success: false
         };
     }
 
@@ -32,13 +33,23 @@ class Signup extends Component {
 						}
 						else {
 							console.log("Account well created.")
+							this.handleSuccess();
 						}
          });
     }
-
+		handleSuccess() {
+			this.setState({succeed: true});
+		}
+		connexion = () => {
+			this.props.history.push('/dashboard')
+		}
+		goBack = () => {
+			this.props.history.push('/')
+		}
     render(){
-        return(
+         return(
             <div className="container card">
+							{this.state.succeed ? <Modal connexion={this.connexion} goBack={this.goBack} /> : "" }
                 <h1>Sign Up</h1>
 
                 { this.state.error ? <div className="alert alert-danger" role="alert">{this.state.error}</div> : undefined}
